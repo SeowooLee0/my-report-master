@@ -31,6 +31,9 @@ export default function CreatePrompt() {
             📝 Prompt Master
           </h1>
         </div>
+        <p className=" text-red-400 p-3">
+          프롬포트를 생성후 chatGPT 사이트에 물어보세요!
+        </p>
         <form className="mt-6" onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block text-gray-700">연령대를 입력해주세요</label>

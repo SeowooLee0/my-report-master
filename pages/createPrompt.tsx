@@ -29,10 +29,10 @@ export default function CreatePrompt() {
       <div className="relative px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5 max-w-lg mx-auto rounded-lg sm:px-10">
         <div className="w-full">
           <h1 className="text-3xl font-semibold text-center">
-            📝 Prompt Master
+            📝 Report Master
           </h1>
         </div>
-        <p className=" text-red-400 p-3">
+        <p className=" text-red-400 p-3 w-full text-center">
           질문을 생성후 chatGPT 사이트에 물어보세요!
         </p>
         <form className="mt-6" onSubmit={handleSubmit}>
@@ -58,7 +58,7 @@ export default function CreatePrompt() {
           </div>
           <div className="mb-4">
             <label className="block text-gray-700">
-              분량을 선택해주세요(A4기준)
+              작성할 레포트의 분량을 선택해주세요(A4기준)
             </label>
             <select
               className="mt-1 p-2 w-full border rounded-md"
@@ -82,9 +82,10 @@ export default function CreatePrompt() {
           </div>
           <div className="mb-4">
             <label className="block text-gray-700">
-              강조하고 싶거나 요청사항이 있다면 알려주세요
+              레포트 작성시 강조하고 싶거나 요청사항이 있다면 알려주세요
             </label>
             <textarea
+              placeholder="예시) 본론에 해당 주제에 대한 예시를 2가지 이상 넣어줘"
               className="mt-1 p-2 w-full border rounded-md"
               value={emphasis}
               onChange={(e) => setEmphasis(e.target.value)}

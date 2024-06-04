@@ -11,11 +11,11 @@ export default function Home() {
               📝 Report Master
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-700">
-              Report Master는 chatGPT를 좀 더 편리하게 사용하기 위해 만들어진
-              툴입니다.
+              Report Master는 ChatGPT를 쉽게 활용할 수 있도록 도와주는
+              도구입니다.
               <br />
-              원하는 결과값을 얻기위해서 자세한 프롬포트를 만들어 chatGPT에게
-              물어보세요!
+              내가 원하는 조건을 선택하고 시작하기 버튼을 눌러 구체적인 질문을
+              작성해서 chatGPT에게 물어보세요!
             </p>
             <div className="p-3 mt-5 ">
               <button className=" bg-gray-400 text-white rounded-lg p-3 ml-2 hover:bg-blue-400">

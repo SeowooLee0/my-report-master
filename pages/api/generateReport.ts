@@ -3,12 +3,12 @@ import { OpenAI } from "openai";
 export default async function handler(
   req: {
     body: {
-      age: any;
-      topic: any;
-      length: any;
-      emphasis: any;
-      language: any;
-      openaiApiKey: any;
+      age: number;
+      topic: string;
+      length: string;
+      emphasis: string;
+      language: string;
+      openaiApiKey: string;
     };
   },
   res: any
@@ -39,7 +39,7 @@ export default async function handler(
         { role: "user", content: prompt },
       ],
       temperature: 0.7,
-      max_tokens: 1024,
+      max_tokens: 3000,
       top_p: 1,
     });
 

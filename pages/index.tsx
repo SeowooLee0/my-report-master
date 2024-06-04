@@ -3,9 +3,9 @@ import { useState } from "react";
 export default function Home() {
   const [age, setAge] = useState(20);
   const [topic, setTopic] = useState("");
-  const [length, setLength] = useState("3");
+  const [length, setLength] = useState("1");
   const [emphasis, setEmphasis] = useState("");
-  const [language, setLanguage] = useState("English");
+  const [language, setLanguage] = useState("Korean");
   const [customLanguage, setCustomLanguage] = useState("");
   const [report, setReport] = useState("");
   const [openaiApiKey, setOpenaiApiKey] = useState("");

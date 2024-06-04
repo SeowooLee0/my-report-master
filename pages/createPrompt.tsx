@@ -10,6 +10,7 @@ export default function CreatePrompt() {
   const [emphasis, setEmphasis] = useState("");
   const [language, setLanguage] = useState("Korean");
   const [customLanguage, setCustomLanguage] = useState("");
+  const [customLength, setCustomLength] = useState("");
   const [prompt, setPrompt] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -32,7 +33,7 @@ export default function CreatePrompt() {
           </h1>
         </div>
         <p className=" text-red-400 p-3">
-          프롬포트를 생성후 chatGPT 사이트에 물어보세요!
+          질문을 생성후 chatGPT 사이트에 물어보세요!
         </p>
         <form className="mt-6" onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -56,16 +57,28 @@ export default function CreatePrompt() {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">분량을 선택해주세요</label>
+            <label className="block text-gray-700">
+              분량을 선택해주세요(A4기준)
+            </label>
             <select
               className="mt-1 p-2 w-full border rounded-md"
               value={length}
               onChange={(e) => setLength(e.target.value)}
             >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
+              <option value="1">1장</option>
+              <option value="2">2장</option>
+              <option value="3">3장</option>
+              <option value="직접입력">직접입력</option>
+            </select>{" "}
+            {length === "직접입력" && (
+              <input
+                type="text"
+                className="mt-2 p-2 w-full border rounded-md"
+                placeholder="분량을 입력해주세요(예시. 5장)"
+                value={customLength}
+                onChange={(e) => setCustomLength(e.target.value)}
+              />
+            )}
           </div>
           <div className="mb-4">
             <label className="block text-gray-700">
@@ -86,13 +99,13 @@ export default function CreatePrompt() {
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
             >
-              <option value="Korean">Korean</option>
-              <option value="English">English</option>
-              <option value="Japanese">Japanese</option>
-              <option value="Chinese">Chinese</option>
-              <option value="Other">Other</option>
+              <option value="한글">한글</option>
+              <option value="영어">영어</option>
+              <option value="일본어">일본어</option>
+              <option value="중국어">중국어</option>
+              <option value="Other">기타</option>
             </select>
-            {language === "Other" && (
+            {language === "기타" && (
               <input
                 type="text"
                 className="mt-2 p-2 w-full border rounded-md"
@@ -110,11 +123,11 @@ export default function CreatePrompt() {
             >
               {isLoading ? "작성중..." : "시작하기"}
             </button>
-            <button className=" bg-gray-500 text-white rounded-lg p-2 ml-2">
+            {/* <button className=" bg-gray-500 text-white rounded-lg p-2 ml-2">
               <Link href="/createReport" prefetch={false}>
                 chatGPT 사용하기
               </Link>
-            </button>
+            </button> */}
           </div>
           {prompt && (
             <div>
@@ -125,8 +138,9 @@ export default function CreatePrompt() {
               </p>
               <br />
               <p>주제: {topic}</p>
-              <p>독자의 연령: {age}</p>
-              <p>분량: {length}</p>
+              <p>제공자의 연령: {age}</p>
+              <p>분량: A4기준 {customLength !== "" ? customLength : length}</p>
+              <p>언어 : {customLanguage !== "" ? customLanguage : language}</p>
               <p>요청사항 : {emphasis}</p>
               <br />
               다음은 각각 구조에 따라 원하는 구성을 작성해두었으니 이를 참고해서
@@ -152,7 +166,12 @@ export default function CreatePrompt() {
               </p>
               가독성을 위해 자연스러운 문맥을 만들어줘. 대상 독자의 나이가 15세
               이상이라면, 제출용으로 작성되는 것이므로 진중하고 무거운 톤으로
-              작성해줘.
+              작성해줘. <br />
+              <button className="w-full text-center bg-gray-200 m-1 p-2 rounded-xl hover:bg-blue-300">
+                <Link href="https://chatgpt.com" prefetch={false}>
+                  chatGPT에게 물어보러 가기
+                </Link>
+              </button>
             </div>
           )}
         </form>

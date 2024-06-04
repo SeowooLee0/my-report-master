@@ -18,14 +18,9 @@ export default function Home() {
               물어보세요!
             </p>
             <div className="p-3 mt-5 ">
-              <button className="mr-20  bg-gray-500 text-white rounded-lg p-3 ml-2 hover:bg-pink-400">
-                <Link href="/createReport" prefetch={false}>
-                  chatGPT로 레포트 생성하기
-                </Link>
-              </button>
-              <button className=" bg-gray-500 text-white rounded-lg p-3 ml-2 hover:bg-blue-400">
+              <button className=" bg-gray-400 text-white rounded-lg p-3 ml-2 hover:bg-blue-400">
                 <Link href="/createPrompt" prefetch={false}>
-                  프롬포트만 생성하기
+                  질문 생성하기
                 </Link>
               </button>
             </div>

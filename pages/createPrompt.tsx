@@ -108,7 +108,7 @@ export default function CreatePrompt() {
               {isLoading ? "작성중..." : "시작하기"}
             </button>
             <button className=" bg-gray-500 text-white rounded-lg p-2 ml-2">
-              <Link href="/" prefetch={false}>
+              <Link href="/createReport" prefetch={false}>
                 chatGPT 사용하기
               </Link>
             </button>

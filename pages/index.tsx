@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
@@ -44,7 +45,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12">
+    <div className="text-black min-h-screen bg-gray-100 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12">
       <div className="relative px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5 max-w-lg mx-auto rounded-lg sm:px-10">
         <div className="w-full">
           <h1 className="text-3xl font-semibold text-center">
@@ -136,6 +137,12 @@ export default function Home() {
                 disabled={isLoading}
               >
                 {isLoading ? "작성중..." : "시작하기"}
+              </button>
+
+              <button className=" bg-gray-500 text-white rounded-lg p-2 ml-2">
+                <Link href="/createPrompt" prefetch={false}>
+                  프롬포트만 생성하기
+                </Link>
               </button>
             </div>
           </form>

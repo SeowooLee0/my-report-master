@@ -1,4 +1,5 @@
 import { tree } from "next/dist/build/templates/app-page";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function CreatePrompt() {
@@ -14,30 +15,23 @@ export default function CreatePrompt() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    if (!topic) {
+      alert("주제를 작성해주세요!");
+      return;
+    }
     setPrompt(true);
     setIsLoading(false);
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12">
+    <div className="text-black min-h-screen bg-gray-100 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12">
       <div className="relative px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5 max-w-lg mx-auto rounded-lg sm:px-10">
         <div className="w-full">
           <h1 className="text-3xl font-semibold text-center">
-            📝 Report Master
+            📝 Prompt Master
           </h1>
         </div>
         <form className="mt-6" onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label className="block text-gray-700">
-              chatGpt를 사용하는 목적을 입력해주세요
-            </label>
-            <input
-              type="text"
-              className="mt-1 p-2 w-full border rounded-md"
-              value={system}
-              onChange={(e) => setSystem(e.target.value)}
-            />
-          </div>
           <div className="mb-4">
             <label className="block text-gray-700">연령대를 입력해주세요</label>
             <input
@@ -112,6 +106,11 @@ export default function CreatePrompt() {
               disabled={isLoading}
             >
               {isLoading ? "작성중..." : "시작하기"}
+            </button>
+            <button className=" bg-gray-500 text-white rounded-lg p-2 ml-2">
+              <Link href="/" prefetch={false}>
+                chatGPT 사용하기
+              </Link>
             </button>
           </div>
           {prompt && (

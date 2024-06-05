@@ -169,7 +169,7 @@ export default function CreatePrompt() {
               이상이라면, 제출용으로 작성되는 것이므로 진중하고 무거운 톤으로
               작성해줘. <br />
               <button className="w-full text-center bg-gray-200 m-1 p-2 rounded-xl hover:bg-blue-300">
-                <Link href="https://chatgpt.com" prefetch={false}>
+                <Link href="https://chatgpt.com/" prefetch={false}>
                   chatGPT에게 물어보러 가기
                 </Link>
               </button>

@@ -19,7 +19,7 @@ export default function Home() {
             </p>
             <div className="p-3 mt-5 ">
               <button className=" bg-gray-400 text-white rounded-lg p-3 ml-2 hover:bg-blue-400">
-                <Link href="/createReportPrompt" prefetch={false}>
+                <Link href="/createPrompt" prefetch={false}>
                   질문 생성하기
                 </Link>
               </button>

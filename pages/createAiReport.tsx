@@ -23,7 +23,7 @@ export default function Home() {
       return;
     }
     setIsLoading(true);
-    const response = await fetch("/api/generateReport", {
+    const response = await fetch("/api/generateAiReport", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

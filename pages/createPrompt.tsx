@@ -8,7 +8,7 @@ export default function CreatePrompt() {
   const [topic, setTopic] = useState("");
   const [length, setLength] = useState("1");
   const [emphasis, setEmphasis] = useState("");
-  const [language, setLanguage] = useState("Korean");
+  const [language, setLanguage] = useState("한글");
   const [customLanguage, setCustomLanguage] = useState("");
   const [customLength, setCustomLength] = useState("");
   const [prompt, setPrompt] = useState(false);
